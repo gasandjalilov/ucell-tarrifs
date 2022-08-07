@@ -21,4 +21,12 @@ public class Po implements Serializable {
     @PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED,ordinal = 0,ordering = Ordering.DESCENDING)
     private UUID id;
 
+    private long inetValue;
+
+    private long callValue;
+
+    private long smsValue;
+
+    private Map<String,String>
+
 }
