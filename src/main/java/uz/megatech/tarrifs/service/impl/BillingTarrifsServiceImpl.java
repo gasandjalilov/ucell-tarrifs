@@ -31,4 +31,9 @@ public class BillingTarrifsServiceImpl implements BillingTarrifsService {
     public Flux<PoDTO> getTarrifByPhone(String phone) {
         return billingHelper.findAll();
     }
+
+    @Override
+    public Mono<PoDTO> getTarrifByRate(Integer rate) {
+        return billingHelper.getByRate(rate);
+    }
 }

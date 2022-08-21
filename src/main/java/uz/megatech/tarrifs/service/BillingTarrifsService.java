@@ -11,4 +11,6 @@ public interface BillingTarrifsService {
     Mono<PoDTO> addTarrif(PoDTO poDTO);
 
     Flux<PoDTO> getTarrifByPhone(String phone);
+
+    Mono<PoDTO> getTarrifByRate(Integer rate);
 }

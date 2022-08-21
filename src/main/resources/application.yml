@@ -10,23 +10,25 @@ spring:
     cassandra:
       keyspace-name: tarrif
       port: 9042
-      contact-points:  192.168.160.132 #, 192.168.160.136, 192.168.160.137
+      contact-points:  10.2.37.20 #, 192.168.160.136, 192.168.160.137 192.168.160.132
       local-datacenter: datacenter1
       schema-action: CREATE_IF_NOT_EXISTS
       request:
         timeout: 60s
-  config:
-    import: "optional:consul:"
-  cloud:
-    consul:
-      discovery:
-        instanceId: tarrif-service:${spring.application.instance-id:${random.value}}
-        service-name: tarrif-service
-        prefer-ip-address: true
-        health-check-url: http://192.168.160.90:8798/actuator/health
-        ip-address: 192.168.160.90
-      config:
-        watch:
-          enabled: false
-      host: 172.20.0.1 # 192.168.163.11  192.168.93.129 192.168.93.98
-      port: 8500
+#  config:
+#    import: "optional:consul:"
+#  cloud:
+#    consul:
+#      discovery:
+#        instanceId: tarrif-service:${spring.application.instance-id:${random.value}}
+#        service-name: tarrif-service
+#        prefer-ip-address: true
+#        health-check-url: http://192.168.160.90:8798/actuator/health
+#        ip-address: 192.168.160.90
+#      config:
+#        watch:
+#          enabled: false
+#      host: 172.20.0.1 # 192.168.163.11  192.168.93.129 192.168.93.98
+#      port: 8500
+server:
+  port: 7701

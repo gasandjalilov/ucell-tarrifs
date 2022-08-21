@@ -27,5 +27,9 @@ public class BillingHelper {
                 .map(poMapper::toDto);
     }
 
+    public Mono<PoDTO> getByRate(Integer rate){
+        return poRepository.findByRatePlanId(rate)
+                .map(poMapper::toDto);
+    }
 
 }
